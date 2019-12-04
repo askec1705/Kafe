@@ -87,9 +87,10 @@
             this.btnUpdate.Location = new System.Drawing.Point(522, 260);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(191, 94);
-            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "GÜNCELLE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click_1);
             // 
             // txtSpecification
             // 
@@ -98,7 +99,7 @@
             this.txtSpecification.Multiline = true;
             this.txtSpecification.Name = "txtSpecification";
             this.txtSpecification.Size = new System.Drawing.Size(333, 183);
-            this.txtSpecification.TabIndex = 10;
+            this.txtSpecification.TabIndex = 5;
             // 
             // mtxtKategori
             // 
@@ -125,7 +126,7 @@
             this.mtxtKategori.SelectionStart = 0;
             this.mtxtKategori.ShortcutsEnabled = true;
             this.mtxtKategori.Size = new System.Drawing.Size(333, 23);
-            this.mtxtKategori.TabIndex = 6;
+            this.mtxtKategori.TabIndex = 4;
             this.mtxtKategori.UseSelectable = true;
             this.mtxtKategori.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtKategori.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -155,7 +156,7 @@
             this.mtxtPorsFiyat.SelectionStart = 0;
             this.mtxtPorsFiyat.ShortcutsEnabled = true;
             this.mtxtPorsFiyat.Size = new System.Drawing.Size(333, 23);
-            this.mtxtPorsFiyat.TabIndex = 7;
+            this.mtxtPorsFiyat.TabIndex = 3;
             this.mtxtPorsFiyat.UseSelectable = true;
             this.mtxtPorsFiyat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtPorsFiyat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -185,7 +186,7 @@
             this.mtxtMalzemeler.SelectionStart = 0;
             this.mtxtMalzemeler.ShortcutsEnabled = true;
             this.mtxtMalzemeler.Size = new System.Drawing.Size(333, 23);
-            this.mtxtMalzemeler.TabIndex = 8;
+            this.mtxtMalzemeler.TabIndex = 2;
             this.mtxtMalzemeler.UseSelectable = true;
             this.mtxtMalzemeler.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtMalzemeler.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -215,7 +216,7 @@
             this.mtxtYemekisim.SelectionStart = 0;
             this.mtxtYemekisim.ShortcutsEnabled = true;
             this.mtxtYemekisim.Size = new System.Drawing.Size(333, 23);
-            this.mtxtYemekisim.TabIndex = 9;
+            this.mtxtYemekisim.TabIndex = 1;
             this.mtxtYemekisim.UseSelectable = true;
             this.mtxtYemekisim.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtYemekisim.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -228,7 +229,7 @@
             this.mlblPicture.Location = new System.Drawing.Point(78, 170);
             this.mlblPicture.Name = "mlblPicture";
             this.mlblPicture.Size = new System.Drawing.Size(99, 35);
-            this.mlblPicture.TabIndex = 1;
+            this.mlblPicture.TabIndex = 11;
             this.mlblPicture.Text = "Yemeğin Tarifi :";
             this.mlblPicture.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -240,7 +241,7 @@
             this.mlblKategori.Location = new System.Drawing.Point(42, 141);
             this.mlblKategori.Name = "mlblKategori";
             this.mlblKategori.Size = new System.Drawing.Size(135, 23);
-            this.mlblKategori.TabIndex = 2;
+            this.mlblKategori.TabIndex = 10;
             this.mlblKategori.Text = "Yemeğin Kategorisi :";
             this.mlblKategori.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -252,7 +253,7 @@
             this.mlblFiyat.Location = new System.Drawing.Point(15, 112);
             this.mlblFiyat.Name = "mlblFiyat";
             this.mlblFiyat.Size = new System.Drawing.Size(162, 23);
-            this.mlblFiyat.TabIndex = 3;
+            this.mlblFiyat.TabIndex = 9;
             this.mlblFiyat.Text = "Yemeğin Porsiyon Fiyatı :";
             this.mlblFiyat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -262,7 +263,7 @@
             this.mlblMalzemeler.Location = new System.Drawing.Point(30, 83);
             this.mlblMalzemeler.Name = "mlblMalzemeler";
             this.mlblMalzemeler.Size = new System.Drawing.Size(147, 23);
-            this.mlblMalzemeler.TabIndex = 4;
+            this.mlblMalzemeler.TabIndex = 8;
             this.mlblMalzemeler.Text = "Yemeğin Malzemeleri :";
             this.mlblMalzemeler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -273,7 +274,7 @@
             this.mlblisim.Location = new System.Drawing.Point(78, 54);
             this.mlblisim.Name = "mlblisim";
             this.mlblisim.Size = new System.Drawing.Size(99, 23);
-            this.mlblisim.TabIndex = 5;
+            this.mlblisim.TabIndex = 7;
             this.mlblisim.Text = "Yemeğin İsmi :";
             this.mlblisim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

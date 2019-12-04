@@ -24,7 +24,7 @@ namespace Kafe
 
         ProjectContext db = new ProjectContext();
 
-        public Form4(Food food)
+        public Form4(Food food) : this()
         {
             this._food = food;
         }
@@ -34,6 +34,10 @@ namespace Kafe
             foreach (Control item in control.Controls)
             {
                 if (item is MetroTextBox)
+                {
+                    item.Text = "";
+                }
+                else if (item is TextBox)
                 {
                     item.Text = "";
                 }
@@ -61,7 +65,7 @@ namespace Kafe
         //    }
         //}
 
-        private void Form4_Load(object sender, EventArgs e)
+        public void Form4_Load(object sender, EventArgs e)
         {
             mtxtYemekisim.Text    = _food.FoodName;
             mtxtMalzemeler.Text   = _food.FoodMetarials;
@@ -70,7 +74,14 @@ namespace Kafe
             txtSpecification.Text = _food.FoodSpecification;
         }
 
-        private void BtnUpdate_Click(object sender, EventArgs e)
+        public void MetroLink1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        public void BtnUpdate_Click_1(object sender, EventArgs e)
         {
             _food.FoodName = mtxtYemekisim.Text;
             _food.FoodMetarials = mtxtMalzemeler.Text;
@@ -86,13 +97,6 @@ namespace Kafe
             bool result = foodsService.Update(_food);
 
             foodsService.Update(_food);
-        }
-
-        private void MetroLink1_Click(object sender, EventArgs e)
-        {
-            Form2 frm = new Form2();
-            this.Hide();
-            frm.ShowDialog();
         }
     }
 }

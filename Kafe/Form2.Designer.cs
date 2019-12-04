@@ -29,58 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeniKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
+            this.TsmDuzenle = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmSil = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmYeni = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmDetay = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvFoods = new System.Windows.Forms.DataGridView();
             this.metroContextMenu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
             this.SuspendLayout();
+            // 
+            // metroContextMenu1
+            // 
+            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmDuzenle,
+            this.TsmSil,
+            this.TsmYeni,
+            this.TsmDetay});
+            this.metroContextMenu1.Name = "metroContextMenu1";
+            this.metroContextMenu1.Size = new System.Drawing.Size(126, 92);
+            // 
+            // TsmDuzenle
+            // 
+            this.TsmDuzenle.Name = "TsmDuzenle";
+            this.TsmDuzenle.Size = new System.Drawing.Size(125, 22);
+            this.TsmDuzenle.Text = "Düzenle";
+            this.TsmDuzenle.Click += new System.EventHandler(this.TsmDuzenle_Click);
+            // 
+            // TsmSil
+            // 
+            this.TsmSil.Name = "TsmSil";
+            this.TsmSil.Size = new System.Drawing.Size(125, 22);
+            this.TsmSil.Text = "Sil";
+            this.TsmSil.Click += new System.EventHandler(this.TsmSil_Click);
+            // 
+            // TsmYeni
+            // 
+            this.TsmYeni.Name = "TsmYeni";
+            this.TsmYeni.Size = new System.Drawing.Size(125, 22);
+            this.TsmYeni.Text = "Yeni Kayıt";
+            this.TsmYeni.Click += new System.EventHandler(this.TsmYeni_Click);
+            // 
+            // TsmDetay
+            // 
+            this.TsmDetay.Name = "TsmDetay";
+            this.TsmDetay.Size = new System.Drawing.Size(125, 22);
+            this.TsmDetay.Text = "Detay";
+            this.TsmDetay.Click += new System.EventHandler(this.TsmDetay_Click);
             // 
             // dgvFoods
             // 
             this.dgvFoods.BackgroundColor = System.Drawing.Color.White;
             this.dgvFoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoods.Location = new System.Drawing.Point(13, 13);
+            this.dgvFoods.ContextMenuStrip = this.metroContextMenu1;
+            this.dgvFoods.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFoods.Location = new System.Drawing.Point(20, 60);
             this.dgvFoods.Name = "dgvFoods";
-            this.dgvFoods.Size = new System.Drawing.Size(775, 425);
+            this.dgvFoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoods.Size = new System.Drawing.Size(760, 370);
             this.dgvFoods.TabIndex = 0;
-            // 
-            // metroContextMenu1
-            // 
-            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.düzenleToolStripMenuItem,
-            this.silToolStripMenuItem,
-            this.yeniKayıtToolStripMenuItem,
-            this.detayToolStripMenuItem});
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(126, 92);
-            // 
-            // düzenleToolStripMenuItem
-            // 
-            this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.düzenleToolStripMenuItem.Text = "Düzenle";
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            // 
-            // yeniKayıtToolStripMenuItem
-            // 
-            this.yeniKayıtToolStripMenuItem.Name = "yeniKayıtToolStripMenuItem";
-            this.yeniKayıtToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.yeniKayıtToolStripMenuItem.Text = "Yeni Kayıt";
-            // 
-            // detayToolStripMenuItem
-            // 
-            this.detayToolStripMenuItem.Name = "detayToolStripMenuItem";
-            this.detayToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.detayToolStripMenuItem.Text = "Detay";
             // 
             // Form2
             // 
@@ -89,21 +96,20 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvFoods);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "YEMEK LİSTESİ";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
             this.metroContextMenu1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvFoods;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-        private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yeniKayıtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TsmDuzenle;
+        private System.Windows.Forms.ToolStripMenuItem TsmSil;
+        private System.Windows.Forms.ToolStripMenuItem TsmYeni;
+        private System.Windows.Forms.ToolStripMenuItem TsmDetay;
+        private System.Windows.Forms.DataGridView dgvFoods;
     }
 }

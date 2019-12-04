@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Kafe
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MetroForm
     {
         public Form2()
         {
             InitializeComponent();
         }
-        Food _food;
+        Food food;
 
         FoodsService foodsService = new FoodsService();
 
@@ -24,13 +25,14 @@ namespace Kafe
 
         public Form2(Food food)
         {
-            this._food = food;
+            this.food = food;
         }
 
         public void Liste()
         {
             dgvFoods.DataSource = db.Foods.Select(yb => new
             {
+                yb.FoodId,
                 yb.FoodName,
                 yb.FoodPrice
             }).ToList();
@@ -53,21 +55,21 @@ namespace Kafe
         {
             Guid Id = (Guid)dgvFoods.SelectedRows[0].Cells[0].Value;
             Food food = db.Foods.FirstOrDefault(x => x.FoodId == Id);
-            Form4 frm4 = new Form4();
+            Form4 frm4 = new Form4(food);
             this.Hide();
             frm4.ShowDialog();
         }
 
-        private void TsmDetay_Click(object sender, EventArgs e)
+        public void TsmDetay_Click(object sender, EventArgs e)
         {
             Guid Id = (Guid)dgvFoods.SelectedRows[0].Cells[0].Value;
             Food food = db.Foods.FirstOrDefault(x => x.FoodId == Id);
-            Form3 frm3 = new Form3();
+            Form3 frm3 = new Form3(food);
             this.Hide();
             frm3.ShowDialog();
         }
 
-        private void TsmYeni_Click(object sender, EventArgs e)
+        public void TsmYeni_Click(object sender, EventArgs e)
         {
             Form1 frm1 = new Form1();
             this.Hide();

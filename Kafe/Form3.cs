@@ -17,27 +17,27 @@ namespace Kafe
         {
             InitializeComponent();
         }
-        Food _food;
+        Food food;
 
         FoodsService foodsService = new FoodsService();
 
         ProjectContext db = new ProjectContext();
 
-        public Form3(Food food)
+        public Form3(Food food) : this()
         {
-            this._food = food;
+            this.food = food;
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        public void Form3_Load(object sender, EventArgs e)
         {
-            mlblYemekisim.Text = _food.FoodName;
-            mlblMalzemeler.Text = _food.FoodSpecification;
-            mlblFiyat.Text = _food.FoodPrice;
-            mlblKategori.Text = _food.FoodCategory;
-            mlblTarif.Text = _food.FoodSpecification;
+            mlblYemekisim.Text = food.FoodName;
+            mlblMalzemeler.Text = food.FoodSpecification;
+            mlblFiyat.Text = food.FoodPrice;
+            mlblKategori.Text = food.FoodCategory;
+            mlblTarif.Text = food.FoodSpecification;
         }
 
-        private void MetroLink1_Click(object sender, EventArgs e)
+        public void MetroLink1_Click(object sender, EventArgs e)
         {
             Form2 frm = new Form2();
             this.Hide();

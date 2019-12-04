@@ -28,6 +28,10 @@ namespace Kafe
                 {
                     item.Text = "";
                 }
+                else if (item is TextBox)
+                {
+                    item.Text = "";
+                }
             }
         }
         //public void HataMetodu(Control control)
@@ -52,11 +56,11 @@ namespace Kafe
         //    }
         //}
 
-        public static List<Food> Employees = new List<Food>();
+        public static List<Food> Foods = new List<Food>();
 
-        FoodsService employeesService = new FoodsService();
+        FoodsService foodsService = new FoodsService();
 
-        private void BtnSave_Click(object sender, EventArgs e)
+        public void BtnSave_Click(object sender, EventArgs e)
         {
             Food food = new Food();
 
@@ -68,13 +72,13 @@ namespace Kafe
 
             //HataMetodu(groupBox1);
             Temizle(groupBox1);
-            Employees.Add(food);
-            bool result = employeesService.Add(food);
-            Employees.Add(food);
+            Foods.Add(food);
+            bool result = foodsService.Add(food);
+            Foods.Add(food);
             MetroMessageBox.Show(this, result ? "Kayıt başarıyla eklendi" : "Kayıt ekleme hatası", "Kayıt Ekleme Bildirme", MessageBoxButtons.OK, result ? MessageBoxIcon.Hand : MessageBoxIcon.Error);
         }
 
-        private void MetroLink1_Click(object sender, EventArgs e)
+        public void MetroLink1_Click(object sender, EventArgs e)
         {
             Form2 frm = new Form2();
             this.Hide();
